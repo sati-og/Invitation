@@ -3,6 +3,8 @@ import Image from "next/image";
 import Invitation from "@/app/component/Invitation";
 import Wishes from "@/app/component/Wishes";
 import Schedule from "@/app/component/Schedule";
+import ReactFullpage from '@fullpage/react-fullpage';
+
 
 export default function Home() {
   return (
@@ -14,9 +16,22 @@ export default function Home() {
       {/*  <a className={`${styles.menuButton} ${styles.menuButton2}`} href={'#schedule'}>Расписание</a>*/}
       {/*  <a className={`${styles.menuButton} ${styles.menuButton3}`} href={'#wishes'}>Пожелания</a>*/}
       {/*</div>*/}
-      <Invitation />
-      <Schedule />
-      <Wishes />
+      <ReactFullpage>
+            <ReactFullpage.Wrapper>
+              <div className="section">
+                <Invitation />
+
+              </div>
+              <div className="section">
+                <Schedule />
+
+              </div>
+              <div className="section">
+                <Wishes />
+
+              </div>
+            </ReactFullpage.Wrapper>
+      </ReactFullpage>
     </div>
   )
 }
